@@ -21,7 +21,6 @@ int x_press_num = 0;
 int z_press_num = 0;
 float z_delta = 0.5f;
 float y_delta = 0.5f;
-int scale_press_num = 0;
 float scale_delta = 0.5f;
 int rotation_press_num = 0;
 float rotation_delta = 2.0f;
@@ -862,63 +861,69 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         glfwSetWindowShouldClose(window, true);
 
     if (key == GLFW_KEY_A && action == GLFW_PRESS) {
-        x_press_num -= 1;
+        //move rightward
+        x_press_num -= 1;   
     }
     if (key == GLFW_KEY_D && action == GLFW_PRESS) {
+        //move lefttward
         x_press_num += 1;
     }
 
 
     if (key == GLFW_KEY_S && action == GLFW_PRESS) {
+        //move backward
         z_press_num += 1;
     }
     if (key == GLFW_KEY_W && action == GLFW_PRESS) {
+        //move forward
         z_press_num -= 1;
     }
 
     if (key == GLFW_KEY_Q && action == GLFW_PRESS) {
-
+        //rotate the boxMan
         rotation_press_num += 1;
     }
     if (key == GLFW_KEY_E && action == GLFW_PRESS) {
+        //rotate the boxMan
         rotation_press_num -= 1;
     }
 
 
-    if (key == GLFW_KEY_Z && action == GLFW_PRESS) {
-        scale_press_num += 1;
-    }
-    if (key == GLFW_KEY_X && action == GLFW_PRESS) {
-        scale_press_num -= 1;
-    }
-
     if (key == GLFW_KEY_H && action == GLFW_PRESS) {
+        //rotate the view
         view_rotation += 1;
     }
     if (key == GLFW_KEY_J && action == GLFW_PRESS) {
+        //rotate the view
         view_rotation -= 1;
     }
 
 
     if (key == GLFW_KEY_LEFT && action == GLFW_PRESS) {
+        //move the cloud leftward
         cloudX_press_num -= 1;
     }
     if (key == GLFW_KEY_RIGHT && action == GLFW_PRESS) {
+        //move the cloud rightward
         cloudX_press_num += 1;
     }
 
 
     if (key == GLFW_KEY_UP && action == GLFW_PRESS) {
+        //move the cloud upward
         cloudY_press_num += 1;
     }
     if (key == GLFW_KEY_DOWN && action == GLFW_PRESS) {
+        //move the cloud downward
         cloudY_press_num -= 1;
     }
 
     if (key == GLFW_KEY_N && action == GLFW_PRESS) {
+        //enlarge the cloud
         cloudScale_press_num += 1;
     }
     if (key == GLFW_KEY_M && action == GLFW_PRESS) {
+        //dwindle the cloud
         cloudScale_press_num -= 1;
     }
 
